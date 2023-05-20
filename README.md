@@ -40,6 +40,12 @@ Here, is a simple visualization of 6 requests.
 
 ## Run the application
 ```bash
+<!-- Clone the Repository -->
+git clone https://github.com/hritik-agarwal/loadBalancer.git
+
+<!-- Install the Dependencies -->
+npm install
+
 <!-- Star server 1 in terminal 1 -->
 PORT=8001 node server.js
 
