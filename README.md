@@ -9,6 +9,11 @@ Here, we have 2 application servers
 
 For the purpose of project, these 2 servers are running on different ports but they could be entirely different machines.
 
+## Redis Caching
+
+- The servers are fetching data from an Image API https://jsonplaceholder.typicode.com/photos
+- The data is cached in the redis and whenever the same query is requested, the cached data is send instead of fetching it again.
+
 ## Nginx Server
 - The Nginx Server is running on port 8080
 - In the nginx configuration file, we set the upstream to server url of these 2 servers.
@@ -25,12 +30,12 @@ Here, is a simple visualization of 6 requests.
 
 | Request Number | Requested PORT | Redirected PORT |
 |--------|---------|----------|
-|   1    | Port 8080 | Port 8001 |
-|   2    | Port 8080 | Port 8002 |
-|   3    | Port 8080 | Port 8002 |
-|   4    | Port 8080 | Port 8001 |
-|   5    | Port 8080 | Port 8002 |
-|   6    | Port 8080 | Port 8002 |
+|   1    | Port 8080 | Port 8001 : Server 1|
+|   2    | Port 8080 | Port 8002 : Server 2|
+|   3    | Port 8080 | Port 8002 : Server 2|
+|   4    | Port 8080 | Port 8001 : Server 1|
+|   5    | Port 8080 | Port 8002 : Server 2|
+|   6    | Port 8080 | Port 8002 : Server 2|
 
 
 ## Run the application
