@@ -1,6 +1,14 @@
-# loadBalancer
+# Nginx as Reverse Proxy and Load Balancer
 
 It is visualization for a load balancer made using Nginx.
+
+## Working of Load Balancing
+![](https://miro.medium.com/v2/resize:fit:1024/1*TrNJZqECEj0eVuJDeNKtNQ.png)
+1. Clients sends requests to Nginx server which acts as a reverse proxy for our main application servers.
+2. Depending on different configuration, the load balancer passes the request to most deserving server.
+3. The server responds with the response to the load balancer and then load balancer passes it to client. 
+
+# Project Description
 
 ## Application Servers
 Here, we have 2 application servers 
